@@ -102,7 +102,7 @@ def main():
     print(codes)
     continue
 
-  print("{0:.0f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(
+  print("{0:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(
     bangToBangCallPercentage()))
 
 

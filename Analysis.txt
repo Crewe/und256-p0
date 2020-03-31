@@ -14,7 +14,9 @@ to `O(n)`.
 ## Task 2
 In order to determine the longest call, all call records must be
 checked. The time complexity is based upon the length of the call
-log. `O(n)`.
+log `O(n)`. Then to find the longest call the list of phone numbers
+with their total duration must be traversed, `O(n)`. Resulting in
+a time complexity of `O(n)`.
 
 ## Task 3
 To determine the calls made from a Bangalore landline, all the call
