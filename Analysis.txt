@@ -1,0 +1,49 @@
+# Worst-case Big-O Runtime Analysys
+
+## Task 0
+Since each call returs only the first and last record. The 
+order of the task is `O(1 + 1)` or `O(1)`. As regardless of The
+input it will take the same amount of time to run.
+
+## Task 1
+In order to determine the result both lists must be tranversed
+from beginning to end. Since it does this twice, the speed is
+determined by the length of the lists, `O(n + n)`, which approximates
+to `O(n)`. 
+
+## Task 2
+In order to determine the longest call, all call records must be
+checked. The time complexity is based upon the length of the call
+log. `O(n)`.
+
+## Task 3
+To determine the calls made from a Bangalore landline, all the call
+logs need to be traversed (`O(n)`). Then that list of records that
+originated from an **(080)** area code need to be checked to see that they
+call a mobile number `(O(n))`, then a check need to be made to see that
+it is a mobile number (contains a space) which is `O(n)` as worst case,
+where n is the length of the phone number, then area codes are sorted
+`O(n log n)`[^1]. Finally the specifi area codes of the called numbers is
+iterated, `O(n)`. Resulting in: 
+
+```
+    O(n) + O(n) + O(n) + O(n log n) + O(n)
+    O(5n) + O(n log n)
+    O(n log n)
+```
+
+## Task 4 
+Retreiving the callers, callees, texters, and textees, from the log
+is `O(4n)`, or `O(n)`. Then a set difference is done on the callers (s) and telemarketers (m) which is `O(len(s))`, and then 3 more times on 
+the that result with callees, texters, and textees `O(len(t))`. A union
+is done on the result t and the set of telemarketers, `O(len(s) + len(t))`[^1], and finally a sort and iteration of the result `O(n log n) + O(n)`.
+Which is simplifes to:
+
+```
+    O(5n) + O(len(s)) + O(len(t)) + O(len(s) + len(t)) + O(n log n)
+    O(n) + O(len(s) + len(t)) + O(n log n)
+    O(len(s) + len(t)) + O(n log n)
+    O(n log n)
+```
+
+[^1]: (https://wiki.python.org/moin/TimeComplexity)
